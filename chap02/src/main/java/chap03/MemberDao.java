@@ -1,5 +1,6 @@
 package chap03;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,10 +29,7 @@ public class MemberDao {
 		System.out.println(member.getId() + ":" + member);
 	}	
 	
-	public void printMemberList() {
-		
-		for(Map.Entry<String, Member> e : map.entrySet()) {
-			System.out.println(e.getKey() + ":" + e.getValue());
-		}
-	}
+	public Collection<Member> selectAll() {
+		return map.values();
+	}	
 }
