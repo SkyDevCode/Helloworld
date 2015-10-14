@@ -7,6 +7,7 @@ import java.util.Map;
 /**
  * DB대신 Map을 이용해서 구현
  * @author Administrator
+ * 
  */
 public class MemberDao {
 
