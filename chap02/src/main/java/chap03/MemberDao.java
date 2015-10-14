@@ -1,12 +1,12 @@
 package chap03;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * DB대신 Map을 이용해서 구현
  * @author Administrator
- *
  */
 public class MemberDao {
 
@@ -28,10 +28,7 @@ public class MemberDao {
 		System.out.println(member.getId() + ":" + member);
 	}	
 	
-	public void printMemberList() {
-		
-		for(Map.Entry<String, Member> e : map.entrySet()) {
-			System.out.println(e.getKey() + ":" + e.getValue());
-		}
-	}
+	public Collection<Member> selectAll() {
+		return map.values();
+	}	
 }

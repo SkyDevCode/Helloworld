@@ -16,4 +16,18 @@
 		<constructor-arg ref="memberDao"></constructor-arg> 
 	</bean>
 	
+	<!-- 의존성 주입 : 생성자 (2개일겨우) -->
+	<bean id="listPrinter" class="chap03.MemberListPrinter">
+		<constructor-arg ref="memberDao"/>
+		<constructor-arg ref="memberPrinter"/> 
+	</bean>
+	
+	<bean id="memberPrinter" class="chap03.MemberPrinter"/>
+	
+	<!-- 의존성 주입 : 설정 메서드 방식 (프로퍼티) -->
+	<bean id="infoPrinter" class="chap03.MemberInfoPrinter">
+		<property name="memberDao" ref="memberDao"/>	<!-- setMemberDao(MemberDao memberDao) -->
+		<property name="printer" ref="memberPrinter"/> 	<!-- setPrinter(MemberPrinter printer) -->
+	</bean>
+	
 </beans>
